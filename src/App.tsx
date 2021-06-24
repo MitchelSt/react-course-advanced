@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "./context/authContext";
 
 export default function App() {
-  const [authed, setAuthed] = useState(false);
+  const { state, dispatch } = useContext(AuthContext);
 
   return (
     <>
@@ -9,14 +10,16 @@ export default function App() {
       <h2>MEN WALK ON THE MOON</h2>
       <p>Astronauts land on plain; collect rocks, plant flag.</p>
 
-      {!authed && (
+      {!state.authed && (
         <p>
           please log in if you want to read more{" "}
-          <button onClick={() => setAuthed(true)}>login</button>
+          <button onClick={() => dispatch({ type: "SET_AUTHED" })}>
+            login
+          </button>
         </p>
       )}
 
-      {authed && (
+      {state.authed && (
         <>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.

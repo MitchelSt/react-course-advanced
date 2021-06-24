@@ -1,0 +1,25 @@
+.app {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: rgb(21, 37, 37);
+  color: white;
+  height: 100vh;
+}
+
+.modal {
+  width: 100%;
+  min-width: 100%;
+  position: fixed;
+  left: 0;
+  top: 50;
+}
+
+.main {
+  width: 100%;
+  background-color: rgb(204, 240, 240);
+}
